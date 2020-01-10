@@ -7,7 +7,7 @@ function commonEnd(a, b) {
 }
 
 function endsMeet(values, n) {
-  // write your code here
+// this is to update the repository becuase i didnt do it.
 }
 
 function difference(numbers) {
