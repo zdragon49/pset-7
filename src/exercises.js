@@ -1,13 +1,25 @@
 function commonEnd(a, b) {
-  if (!a || a.length === 0 || !b || b.length === 0) {
-    return false;
-  }
-
-  // write your code here
+    if (!a || a.length === 0 || !b || b.length === 0) {
+        return false;
+    }
+    else if (a[0] === b[0]) {
+        return true;
+    }
+    else if (a[a.length - 1] === b[b.length - 1]) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 function endsMeet(values, n) {
-// this is to update the repository becuase i didnt do it.
+  let value2 = []
+  if (!values || values === "" || values.length < n || n < 0 || n === 0) {
+    return value2 = []
+  } for (let i = 0; i < n; i++) {
+      value2.push(values[i])
+  } for (let x = 0; x < n; x++)
 }
 
 function difference(numbers) {
