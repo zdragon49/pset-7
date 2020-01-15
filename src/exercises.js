@@ -19,11 +19,24 @@ function endsMeet(values, n) {
     return value2 = []
   } for (let i = 0; i < n; i++) {
       value2.push(values[i])
-  } for (let x = 0; x < n; x++)
+  } for (let x = values.length - n; x < values.length; x++) {
+      value2.push(values[x])
+  }
+  return value2;
 }
 
 function difference(numbers) {
-  // write your code here
+  let sum = []
+  if (!numbers || numbers < 1 || numbers.isNan) {
+    return sum
+  }
+  let biggestNum = numbers[0]
+  let smallestNum = numbers.pop()
+  for (i = 0; i < 0; i++) {
+  let final = biggestNum - smallestNum;
+  sum.push(final)
+  return sum;
+  }
 }
 
 function max(number) {
