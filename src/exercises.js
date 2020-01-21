@@ -33,7 +33,17 @@ function endsMeet(values, n) {
 }
 
 function difference(numbers) {
-  // write your code here
+  let sum = []
+  if (!numbers || numbers < 1 || numbers.isNan) {
+    return sum
+  }
+  let biggestNum = numbers[0]
+  let smallestNum = numbers.pop()
+  for (i = 0; i < 0; i++) {
+  let final = biggestNum - smallestNum;
+  sum.push(final)
+  return sum;
+  }
 }
 
 function max(number) {
