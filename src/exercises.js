@@ -49,22 +49,95 @@ function difference(numbers) {
       return large - small;
   }
 
+  function max(number) {
+      if (!number || number.length === 0) {
+          return undefined;
+      }
 
-function max(number) {
-  // write your code here
-}
+      var len = number.length;
 
-function middle(values) {
-  // write your code here
-}
+      if (len < 3) {
+          return undefined;
+      } if (len % 2 == 0) {
+          return undefined;
+      }
+      var mid = parseInt(len / 2);
 
-function increasing(numbers) {
-  // write your code here
-}
+      var large = number[0];
 
-function everywhere(values, x) {
-  // write your code here
-}
+      for (i = 0; i < len; i++) {
+
+          if (isNaN(number[i])) {
+              return undefined;
+          }
+
+          if (i == 0 || i == mid || i == (len - 1)) {
+
+              if (large < number[i]) {
+                  large = number[i];
+              }
+          }
+      }
+
+      return large;
+  }
+
+  function middle(values) {
+      let blank = []
+      if (!values || values.length < 3 || values.length % 2 == 0) {
+          return [];
+      }
+      let ind = (values.length / 2) - 1 + 0.5
+      let midTwo = values[ind]
+      let midOne = values[ind - 1]
+      let midThree = values[ind + 1]
+      blank.push(midOne);
+      blank.push(midTwo);
+      blank.push(midThree);
+      return blank;
+
+  }
+
+  function increasing(numbers) {
+      let tag = 0;
+      if (!numbers || numbers.length < 3 || numbers.some(isNaN) || numbers.some(Number.isInteger) === false) {
+          return false;
+      } else {
+          for (let i = 0; i < numbers.length; i++) {
+              if (numbers[i] < numbers[i + 1] && numbers[i + 1] < numbers[i + 2]) {
+                  tag = 1;
+                  return true;
+              }
+          }
+          if (tag === 0) {
+              return false;
+          }
+      }
+  }
+
+
+  function everywhere(values, x) {
+      let flag = 1;
+      if (!values || values.length < 1 || x === undefined) {
+          return false;
+      } else {
+
+          for (let i = 0; i < values.length - 1; i++) {
+              if (values[i] === x) {
+                  flag = 0;
+              } else if (values[i - 1] === x || values[i + 1] === x) {
+                  flag = 0;
+              } else {
+                  flag = 1;
+                  return false;
+              }
+          }
+      }
+      if (flag === 0) {
+          return true;
+      }
+
+  }
 
 function consecutive(numbers) {
   // write your code here
