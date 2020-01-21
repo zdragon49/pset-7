@@ -14,37 +14,41 @@ function commonEnd(a, b) {
 }
 
 function endsMeet(values, n) {
-
     if (!values || values.length === 0) {
         return [];
     }
-
     if (n <= 0) {
         return [];
     }
-
     if (values.length < n) {
         return [];
     }
-
-    let a1 = values.slice(0, n);
-    let a2 = values.slice(-n);
-    return a1.concat(a2);
+    let array1 = values.slice(0, n);
+    let array2 = values.slice(-n);
+    return array1.concat(array2);
 }
 
 function difference(numbers) {
-  let sum = []
-  if (!numbers || numbers < 1 || numbers.isNan) {
-    return sum
+      if (!numbers || numbers.length === 0) {
+          return undefined;
+      }
+
+      var large = numbers[0];
+      var small = numbers[0];
+
+      for (i = 0; i < numbers.length; i++) {
+
+          if (isNaN(numbers[i])) {
+              return undefined;
+          } if (large < numbers[i]) {
+                large = numbers[i];
+          } if (small > numbers[i]) {
+                small = numbers[i];
+          }
+      }
+      return large - small;
   }
-  let biggestNum = numbers[0]
-  let smallestNum = numbers.pop()
-  for (i = 0; i < 0; i++) {
-  let final = biggestNum - smallestNum;
-  sum.push(final)
-  return sum;
-  }
-}
+
 
 function max(number) {
   // write your code here
